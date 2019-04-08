@@ -5,7 +5,12 @@
 
 [build]
   base    = ""
-  publish = "dist"
-  command = "gulp restore && gulp build --prod"
+  publish = "build"
+  command = "node fuser-client.js  --build  --env=prod" # define `secret` env var in netlify console
   #  && gulp firebase-deploy-functions
   #command = "gulp build --prod && gulp firebase-deploy-functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
