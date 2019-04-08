@@ -29,7 +29,7 @@ app.config(()=> {
 	app.lazy = bundular.lazy;
 });
 
-app.run( ($rootScope, utils, $window) => {
+app.run( ($rootScope, utils, $window, $location) => {
 	libx.log.debug('app:run')
 
 	app.firebase.isConnected(()=> {
@@ -42,6 +42,10 @@ app.run( ($rootScope, utils, $window) => {
 		libx.browser.require('resources/components/' + compName + '/controller.js');
 	})
 	libx.browser.require('resources/scripts/lib/ng-inline-edit.js')
+
+	bundular.on('$viewContentLoaded', function () {
+		$rootScope.layout.pageUrl = location.href; //$location.$$path;
+	});
 });
 
 app.controller('layoutEx', ($scope, $rootScope, $sce, $compile, $templateCache, $templateRequest, $timeout, $mdSidenav, $location, $cookies) => {
