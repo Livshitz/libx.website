@@ -4,11 +4,11 @@ app.config(($routeProvider, $sceDelegateProvider, $locationProvider) => {
 	libx.log.verbose('init routes');
 
 	$routeProvider.
-		when('/', { templateUrl: '/views/main.html' }). //, reloadOnSearch:false }).
-		when('/test', { templateUrl: '/views/test.html' }).
+		when('/', 			{ templateUrl: '/views/main.html' }). //, reloadOnSearch:false }).
+		when('/test', 		{ templateUrl: '/views/test.html' }).
 	
 		// System:
-		when('/sys/_css', { templateUrl: '/views/sys/_css.html' }).
+		when('/sys/_css', 	{ templateUrl: '/views/sys/_css.html' }).
 		when('/sys/_theme', { templateUrl: '/views/sys/_theme.html' }).
 		when('/sys/_icons', { templateUrl: '/views/sys/_icons.html' }).
 		// Fallback:

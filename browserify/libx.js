@@ -1,10 +1,16 @@
-console.log('browserify test 4');
-
 global.libx = require('libx.js/bundles/browser.essentials');
+libx.log.debug('browserify statring');
+
 if (global.projconfig != null) global.libx._projconfig = global.projconfig;
 if (global._ == null) global._ = libx._;
 
 libx.di.register('bundular', require('bundularjs'));
+
+// Setup log:
+libx.di.inject(log=>{
+	log.isDebug = true;
+	// log.isShowStacktrace = true;
+})
 
 // Firebase and related modules instantiation:
 global._firebase = global.firebase.initializeApp(projconfig.firebaseConfig);
