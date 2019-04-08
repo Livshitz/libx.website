@@ -6,7 +6,7 @@
 [build]
   base    = ""
   publish = "build"
-  command = "node fuser-client.js  --build  --env=prod" # define `secret` env var in netlify console
+  command = "node fuser.js  --build  --env=prod" # define `secret` env var in netlify console
   #  && gulp firebase-deploy-functions
   #command = "gulp build --prod && gulp firebase-deploy-functions"
 
