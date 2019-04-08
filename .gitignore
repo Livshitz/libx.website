@@ -18,7 +18,6 @@ src/index.html
 /fb-functions/functions/project.json
 lib-cache/
 dist/
-src/project-secrets.json
 src/project-secrets.bak.json
 src/project-secrets-open.json
 
