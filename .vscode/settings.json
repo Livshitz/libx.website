@@ -1,0 +1,7 @@
+{
+	"dotnet-test-explorer.testProjectPath": "./tests",
+    "files.exclude": {
+		"lib-cache": true,
+		"build": true
+	}
+}

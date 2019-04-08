@@ -1,0 +1,15 @@
+style.
+	@media screen and (max-width: 599px){ 	}
+
+.inlineController.content-page(ng-controller="inlineController", layout="column", layout-align="start start").padding
+	
+	h1 Not Found!
+	
+	
+	a(ng-click="bundular.goBack()") Back
+
+script.
+	bundular.lazy.controller('inlineController', function ($scope, $rootScope, $controller, $timeout, $interval, $routeParams) {
+		angular.extend(this, $controller('inlineControllerBase', {$scope: $scope}));
+		
+	});

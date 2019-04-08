@@ -1,0 +1,57 @@
+style.
+	@media screen and (max-width: 599px){ 	}
+	.box-top { width:95%; min-height:180px; padding:40px 80px; }
+	.box-colors { width:95%; padding:20px; }
+	
+
+.inlineController(ng-controller="inlineController", layout="column", layout-align="start start")
+	br
+	br
+	.box-top.corners10.ltr.margin-auto(layout="column", layout-align="end center").bg-mySecondary
+		div(layout="row",layout-align="space-between end").fill
+			div(layout="column",layout-align="end start")
+				.md-display-4.bold Aa
+				.md-subhead.fg-myPrimary2 Open Sans Hebrew
+			div(layout="row",layout-align="end end")
+				div.fg-myColor.light Font Weight &nbsp;
+				div.fg-myColor2
+					span 300 &nbsp;
+					span.bold 500 &nbsp;
+					span.bolder 700 &nbsp;
+					span.extraBold 900
+
+	br
+	.box-colors(layout="row",layout-align="space-around start",layout-wrap).margin-auto
+		.color-plate(ng-repeat="n in range")
+			div(ng-attr-id="{{ 'color-plate-' + n }}").color-plate-block
+			.color-plate-name {{ hexs[$index] }}
+
+// script <!-- this is if you want to write es2015 and let pug transform it for you. Notice that VSCode has bug highlighting this...
+	:babel(presets=['es2015'])
+		window.test = ()=> console.log('test!');
+
+script.
+	bundular.lazy.controller('inlineController', function ($scope, $rootScope, $controller, $timeout) {
+		angular.extend(this, $controller('inlineControllerBase', {$scope: $scope}));
+
+		$scope.range = _.range(1, 5);
+		$scope.hexs = [];
+
+		$timeout(()=>{
+			_.each($scope.range, (i)=>{
+				var c= $scope.getColorHex(i);
+				var h = libx.hexc(c);
+				$scope.hexs.push(h);
+			});
+		}, 100);
+
+		$scope.getColorHex = function(i) {
+			var c = $('#color-plate-' + i).css('backgroundColor');
+			return c;
+		}
+
+		var c = $('#color-plate-1').css('backgroundColor');
+		var hex = libx.hexc(c);
+		console.log('>>>> hex=', hex)
+
+	});

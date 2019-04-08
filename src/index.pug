@@ -1,0 +1,77 @@
+- var projconfig = JSON.parse(JSON.stringify(config)); // <- Executed by pug, will remove private config from public web javascript context
+- var livereloadPort = projconfig.private.livereloadPort;
+- delete projconfig.private; // <- Executed by pug, will remove private config from public web javascript context
+- var isDev = projconfig.env == 'dev';
+- var depSource = '../node_modules/bundularjs/dist/';
+
+doctype html
+html(ng-controller='layoutEx')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		//- meta(name="fragment",content="!")
+
+		//- base(href='/')
+		//- title(ng-bind='layout.title') My App
+		title(ng-bind='layout.title') 
+		include exMeta.pug
+		base(href='/')
+		
+		link(rel='stylesheet', type='text/css', href=depSource + '/framework/bundle.styles.css')
+
+		// build:css bundle/bundle.css
+		link(rel='stylesheet', type='text/css', href='resources/styles/style.min.css')
+		// endbuild
+
+		script.
+			window.prerenderReady = false;
+			window.projconfig = !{JSON.stringify(projconfig)};
+
+
+		//- font(url=depSource + "fonts/SanFranciscoFont/SFCompactDisplay-Regular.otf", dest="fonts/")
+		//- font(url=depSource + "fonts/SanFranciscoFont/SFCompactDisplay-Medium.otf")
+		//- font(url=depSource + "fonts/MaterialIcons-Regular.eot")
+		//- font(url=depSource + "fonts/MaterialIcons-Regular.woff2")
+		//- font(url=depSource + "fonts/MaterialIcons-Regular.woff")
+		//- font(url=depSource + "fonts/MaterialIcons-Regular.ttf")
+		//- font(url=depSource + "fonts/MaterialIcons-Regular.svg")
+		//- font(url=depSource + "fonts/icomoon.eot")
+		//- font(url=depSource + "fonts/icomoon.ttf")
+		//- font(url=depSource + "fonts/icomoon.woff")
+		//- font(url=depSource + "fonts/icomoon.svg")
+
+	body.site-font
+		//(ng-cloak)
+		//-- Content --/
+
+		include _content.pug
+
+		script(src=depSource + 'framework/bundle.jquery.js')
+		script(src=depSource + 'framework/bundle.angular.js')
+		script(src=depSource + 'framework/bundle.firebase.js')
+		//- script(src=depSource + 'scripts/libx.essentials.browser.js')
+
+		// build:jsBundle bundle/browserified.js
+		script(src='resources/scripts/libx.js')
+		//script(src='resources/scripts/api-modules.js')
+		// endbuild
+
+		// build:jsBundle bundle/bundle.js
+		script(src='resources/scripts/app.js')
+		script(src='resources/scripts/app-routes.js')
+		script(src='resources/scripts/app-config.js')
+		script(src='views/views-templates.js')
+		//- script(src='/resources/components/my-loader/controller.js')
+		//- script(src='/resources/components/components-templates.js')
+		// endbuild
+
+		//- script(src=depSource + '/v' + libVer + '/js/build/base.site.js')
+
+		script.
+			if (window._libx_angular_boot == null) bundular.bootstrap();
+
+	// Live-reload:
+	script.
+		if (projconfig.env == 'dev')
+			document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + 
+			':#{livereloadPort}/livereload.js?snipver=1"></' + 'script>');

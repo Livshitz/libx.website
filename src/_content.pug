@@ -1,0 +1,39 @@
+.layout-content.b-g-checked
+	#container.view-container
+		.box-header(layout="row",layout-align="space-between center")
+			a(href="/")
+				//h1.no-margin 
+					span.md-icons pan_tool&nbsp;
+					//- span.huge.icon-pan_tool &nbsp;
+					span(style="top:1px; position:relative;") SecretVoter
+			.box-user(ng-cloak)
+				div(ng-show="user") 
+					div(layout="row")
+						div
+							div.small.bold {{ profile.displayName || user.email || user.id }}
+							a.place-right.small(ng-click="userManager.signOut()") logout
+						.avatar.avatar-small
+							img(ng-src='https://avatars.dicebear.com/v2/jdenticon/{{user.email}}.svg')
+
+				div(ng-show="!user")
+					a(ng-click="userManager.signInGoogle()") login
+
+		block content
+		img.sitebg(src='resources/imgs/bg_matrix_optimized.gif')
+		//- video.fullscreen(loop, muted, autoplay)
+			source(src='resources/imgs/bg_matrix_optimized.mov')
+
+		.view-frame(ng-view)
+			.content-loader.padding
+
+				.inlineController.content-page
+					h3 Loading...
+					.spinner
+						svg(viewBox='0 0 66 66')
+							circle.length(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+						svg(viewBox='0 0 66 66')
+							circle(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+						svg(viewBox='0 0 66 66')
+							circle(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+						svg(viewBox='0 0 66 66')
+							circle(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')

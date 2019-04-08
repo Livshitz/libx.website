@@ -1,0 +1,11 @@
+# Global settings applied to the whole site.  
+# “base” is directory to change to before starting build, and
+# “public” is the directory to publish (relative to root of your repo).
+# “command” is your build command.
+
+[build]
+  base    = ""
+  publish = "dist"
+  command = "gulp restore && gulp build --prod"
+  #  && gulp firebase-deploy-functions
+  #command = "gulp build --prod && gulp firebase-deploy-functions"

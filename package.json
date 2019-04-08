@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bundularjs": "^0.1.7",
+    "connect-gzip": "^0.1.6",
+    "libx.js": "^0.1.4",
+    "ng-inline-edit": "^0.7.0"
+  },
+  "devDependencies": {}
+}
