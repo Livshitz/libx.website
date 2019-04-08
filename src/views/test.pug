@@ -41,7 +41,13 @@ script.
 
 		$scope.num = 17;
 
-		$rootScope.layout.title = 'test page';
+		$rootScope.layout.title = 'test page 1';
+		libx.di.inject(firebase=>{
+			firebase.get('/test').then(res=>{
+				$rootScope.layout.title = 'test page | ' + res;
+				$scope.safeApply();
+			});
+		});
 
 		
 
