@@ -43,7 +43,6 @@ app.run( ($rootScope, utils, $window, $location) => {
 	})
 	libx.browser.require('resources/scripts/lib/ng-inline-edit.js')
 
-	$rootScope.layout.ogImage = "https://d33wubrfki0l68.cloudfront.net/c5484de00f56c7916cbf59c3da005362357c24d6/36ece/resources/imgs/bg_matrix_optimized.gif";
 	bundular.on('$viewContentLoaded', function () {
 		$rootScope.layout.pageUrl = location.href; //$location.$$path;
 	});
@@ -53,5 +52,7 @@ app.controller('layoutEx', ($scope, $rootScope, $sce, $compile, $templateCache, 
 	libx.log.verbose('app:layoutEx');
 
 	$rootScope.layout = app.layout;
+	$rootScope.layout.ogImage = "https://d33wubrfki0l68.cloudfront.net/c5484de00f56c7916cbf59c3da005362357c24d6/36ece/resources/imgs/bg_matrix_optimized.gif";
+
 });
 
