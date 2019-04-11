@@ -20,6 +20,7 @@ lib-cache/
 dist/
 src/project-secrets.bak.json
 src/project-secrets-open.json
+api/build
 
 # psm
 .gitpsm/

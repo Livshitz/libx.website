@@ -1,0 +1,22 @@
+{
+	/* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+	"rules": {
+		// "$all_other_keys": {
+		// ".read": true
+		// },
+		// ".read": true, // "auth != null",
+		//".write": "auth != null && auth.uid === 'server-side'",
+		"myApp": {
+			"dashboard": {
+				".read": true,
+				".write": "auth != null && auth.uid === 'server-side'" // ".write": "auth != null"
+			},
+			"presence": {
+				".read": true,
+				"$uid": {
+					".write": "auth != null && auth.uid === $uid"
+				}
+			}
+		},
+	}
+}
