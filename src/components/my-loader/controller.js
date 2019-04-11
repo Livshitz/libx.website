@@ -1,5 +1,5 @@
 var componentName = bundular.tryGetComponentName(__moduleUri); // <------ Edit this or let __moduleUri (injected by `libx.browser.require`)
-var componentTemplate = 'resources/components/' + componentName.kebabCase() + '/template.html'; 
+var componentTemplate = 'components/' + componentName.kebabCase() + '/template.html'; 
 
 bundular.lazy.directive(componentName, function () {
 	return {

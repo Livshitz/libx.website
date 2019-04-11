@@ -5,19 +5,20 @@ style.
 	
 	a.md-display-1(href="/") Base {{num}}
 
-	h1.fill(inline-edit="frm.myEditableLabel",inline-edit-btn-edit="",inline-edit-placeholder="This is editiable label. Edit me!",inline-edit-on-blur="save",inline-edit-on-click,inline-edit-callback="formChanged(v)")
-	br
-	h2.fill(inline-edit="frm.myEditableText",inline-edit-btn-edit="",inline-edit-btn-save="save",inline-edit-placeholder="This is editiable textarea",inline-edit-on-blur="save",inline-edit-on-click,inline-edit-callback="formChanged(v)",inline-edit-textarea)
-
 	a(href="/_sys/theme") _sys/theme
 	a(href="/_sys/icons") _sys/icons
 
+	br
+	
+	img(src="/resources/imgs/Libx_Icon.png")
+	
 	my-widget(text="'Textyy'")
 		h3 Hey h3
 
 	div.huge-x2.fg-myPrimary.icon-account_circle
 
 	my-loader
+
 
 	md-content(md-theme='docs-dark', layout-gt-sm='row', layout-padding='')
 		div
@@ -41,7 +42,7 @@ style.
 script.
 	bundular.lazy.controller('inlineController', function ($scope, $rootScope, $controller, $timeout, $interval, $routeParams) {
 
-		$scope.num = 17;
+		$scope.num = 18;
 
 		$rootScope.layout.title = 'test page 1';
 		libx.di.inject(firebase=>{

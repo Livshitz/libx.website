@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bundularjs": "^0.1.12",
+    "bundularjs": "^0.1.13",
     "connect-gzip": "^0.1.6",
     "libx.js": "^0.1.6",
     "ng-inline-edit": "^0.7.0"
