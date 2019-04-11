@@ -62,6 +62,8 @@ bundular.controller('layoutEx', ($scope, $rootScope, $sce, $compile, $templateCa
 	$rootScope.layout = app.layout;
 	$rootScope.layout.ogImage = "/resources/imgs/Libx_Icon.png";
 	$rootScope.layout.desc = "Libx + bundularjs"
+
+	$rootScope.layout.no_bg = libx.browser.helpers.urlParams['no-bg'] != null;
 });
 
 (()=>{
