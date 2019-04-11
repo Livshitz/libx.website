@@ -4,7 +4,7 @@ libx.log.debug('browserify statring');
 if (global.projconfig != null) global.libx._projconfig = global.projconfig;
 if (global._ == null) global._ = libx._;
 
-libx.di.register('bundular', require('bundularjs'));
+window.bundular = libx.di.register('bundular', require('bundularjs'));
 
 // Setup log:
 libx.di.inject(log=>{

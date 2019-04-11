@@ -1,18 +1,30 @@
 window.prerenderReady = false;
 
+// Init bundularjs
 window.bundular = libx.di.get('bundular');
 window.app  = angular.module('myApp', ['bundular']); // , 'angular-google-analytics'
 
+// Define app routes
+bundular.routes.init({
+	routes: [
+		new bundular.routes.Route('/', '/views/main.html'),
+		new bundular.routes.Route('/test', '/views/test.html'),
+	],
+	notFoundTemplate: '/views/404.html',
+	isDarkMode: true,
+})
+
+// App config
 app.api = {};
 app.layout = {};
 app.name = "libx";
 app.desc = "Libx";
 app.titlePrefix = "Libx";
-app.isDarkMode = false;
 
 app.layout.title = 'Libx';
 app.getTitle = ()=> 'Test';
 
+// libx modules:
 app.firebase = libx.di.get('firebase');
 app.firebase.firebasePathPrefix = '/libx';
 
@@ -25,11 +37,7 @@ libx.di.inject(firebase=>{
 	})
 });
 
-app.config(()=> {
-	app.lazy = bundular.lazy;
-});
-
-app.run( ($rootScope, utils, $window, $location) => {
+bundular.run( ($rootScope, utils, $window, $location) => {
 	libx.log.debug('app:run')
 
 	app.firebase.isConnected(()=> {
@@ -48,11 +56,13 @@ app.run( ($rootScope, utils, $window, $location) => {
 	});
 });
 
-app.controller('layoutEx', ($scope, $rootScope, $sce, $compile, $templateCache, $templateRequest, $timeout, $mdSidenav, $location, $cookies) => {
+bundular.controller('layoutEx', ($scope, $rootScope, $sce, $compile, $templateCache, $templateRequest, $timeout, $mdSidenav, $location, $cookies) => {
 	libx.log.verbose('app:layoutEx');
 
 	$rootScope.layout = app.layout;
 	$rootScope.layout.ogImage = "https://d33wubrfki0l68.cloudfront.net/c5484de00f56c7916cbf59c3da005362357c24d6/36ece/resources/imgs/bg_matrix_optimized.gif";
-
 });
 
+(()=>{
+	bundular.bootstrap('myApp');
+})()

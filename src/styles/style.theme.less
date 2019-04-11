@@ -7,10 +7,10 @@
 /* ------------------ CONFIG ------------------ */
 @btn-radius:4px;
 
-@myColor1: rgb(3,169,244); @myColor1n: rgb(240, 240, 240);
-@myColor2: #7AC3E5; @myColor2n: #8C55B8;
+@myColor1: rgb(3,169,244); @myColor1n: rgb(33, 52, 88);
+@myColor2: #f0f0f0; @myColor2n: #8C55B8;
 @myColor3: #00171F; @myColor3n: #FFB400;
-@myColor4: #4A90E2; @myColor4n: #E4AA00;
+@myColor4: rgb(1, 114, 165);; @myColor4n: #E4AA00;
 @myColor5: #303030; @myColor5n: #FF2800; //#524D53	
 @myColor: @myColor5;
 
@@ -29,7 +29,6 @@
 #color-plate-3:after { content:"fg-mySecondary"; }
 #color-plate-4 { background-color:@bg-mySecondary; }
 #color-plate-4:after { content:"bg-mySecondary"; }
-.color-plate-block:after { position: relative; bottom: -40px; font-size: small; color: #aaa; }
 
 .md-display-1, .md-display-2, .md-display-3, .md-display-4 { .fg-myPrimary; }
 .md-headline, .md-title, .md-subhead { .fg-mySecondary; }
@@ -41,9 +40,15 @@
 .fg-mySecondary { color:@fg-mySecondary; }
 .bg-mySecondary { background-color:@bg-mySecondary; }
 
-.fg-myColor1 { color:@myColor1; }
+.fg-light { color:@myColor1; }
+.fg-dark { color:@myColor1n; }
+.bgg-light { color:@myColor1; }
+.bgg-dark { color:@myColor1n; }
+
+.fg-myColor { color:@myColor1; }
+.fg-myColor1 { .fg-myColor; }
 .fg-myColor2 { color:@myColor1n; }
-.fg-myColor3 { color:@myColor3; }
+.fg-myColor3 { color:@myColor2; }
 .bg-myColor { background-color:@myColor2n; }
 
 .my-bg { background-color:@myColor1n !important; }
@@ -56,11 +61,11 @@ html, body { background-color:#111; }
 
 * { box-sizing: border-box; }
 a, body, h1, h2, h3, h4, h5, h6, p { font-family: Inconsolata, Menlo, monospace !important; }
-h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 400; margin-top: 36px; color: @myColor1; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 400; margin-top: 36px; color: @myColor4; }
 html, body, p { color: #111; font-size: 17px; text-rendering: optimizeLegibility; }
 
 a, a:visited, a:focus { .fg-myPrimary; }
-p { color:@myColor1n; }
+p { color:@myColor2; }
 
 // .md-button { background-color:@fg-myPrimary; color:white !important; border-radius: 5px; }
 // .md-button.md-default-theme:not([disabled]).md-focused, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]).md-focused, .md-button:not([disabled]):hover { background-color:@fg-myPrimary !important; }

@@ -9,6 +9,9 @@ style.
 	br
 	h2.fill(inline-edit="frm.myEditableText",inline-edit-btn-edit="",inline-edit-btn-save="save",inline-edit-placeholder="This is editiable textarea",inline-edit-on-blur="save",inline-edit-on-click,inline-edit-callback="formChanged(v)",inline-edit-textarea)
 
+	a(href="/_sys/theme") _sys/theme
+	a(href="/_sys/icons") _sys/icons
+
 	my-widget(text="'Textyy'")
 		h3 Hey h3
 
@@ -37,7 +40,6 @@ style.
 
 script.
 	bundular.lazy.controller('inlineController', function ($scope, $rootScope, $controller, $timeout, $interval, $routeParams) {
-		angular.extend(this, $controller('inlineControllerBase', {$scope: $scope}));
 
 		$scope.num = 17;
 
@@ -50,23 +52,22 @@ script.
 		});
 
 		
+		// app.sub = angular.bootstrap(document.getElementById("sub"), []);
+		app.sub = angular.module('sub', ["angularInlineEdit"]) //, 'angular-google-analytics']);
+		//- bundular.applyLazy(app.sub);
 
+		//- angular.element(document).ready(function() {
+		//- 	angular.bootstrap(document.getElementById("sub"), ["sub"]);
+		//- });   
+
+		app.sub.config(()=> {
+			console.log('--- SUB MODULE')
+		})
+
+		app.sub.controller('test1', ($scope)=> {
+			console.log('---!! test!!!');
+			$scope.testy = 123;
+		})
 	});
 
 
-	// app.sub = angular.bootstrap(document.getElementById("sub"), []);
-	app.sub = angular.module('sub', ["myApp", "angularInlineEdit"]) //, 'angular-google-analytics']);
-	// bundular.applyLazy(app.sub);
-
-	//- angular.element(document).ready(function() {
-	//- 	angular.bootstrap(document.getElementById("sub"), ["sub"]);
-	//- });   
-
-	app.sub.config(()=> {
-		console.log('--- SUB MODULE')
-	})
-
-	app.sub.controller('test1', ($scope)=> {
-		console.log('---!! test!!!');
-		$scope.testy = 123;
-	})

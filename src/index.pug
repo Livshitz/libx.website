@@ -57,18 +57,14 @@ html(ng-controller='layoutEx')
 		// endbuild
 
 		// build:jsBundle bundle/bundle.js
-		script(src='resources/scripts/app.js')
-		script(src='resources/scripts/app-routes.js')
-		script(src='resources/scripts/app-config.js')
 		script(src='views/views-templates.js')
+		script(src='resources/scripts/app.js')
+		script(src='resources/scripts/app-config.js')
 		//- script(src='/resources/components/my-loader/controller.js')
 		//- script(src='/resources/components/components-templates.js')
 		// endbuild
 
 		//- script(src=depSource + '/v' + libVer + '/js/build/base.site.js')
-
-		script.
-			if (window._libx_angular_boot == null) bundular.bootstrap();
 
 	// Live-reload:
 	script.
