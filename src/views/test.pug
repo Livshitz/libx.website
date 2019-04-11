@@ -10,7 +10,8 @@ style.
 
 	br
 	
-	img(src="/resources/imgs/Libx_Icon.png")
+	div
+		img(src="/resources/imgs/Libx_Icon.png").fill
 	
 	my-widget(text="'Textyy'")
 		h3 Hey h3
@@ -34,7 +35,7 @@ style.
 		div(ng-controller="test1")
 			div {{testy}}
 
-			h1.fill(inline-edit="frm.myEditableLabel",inline-edit-btn-edit="",inline-edit-placeholder="This is editiable label. Edit me!",inline-edit-on-blur="save",inline-edit-on-click,inline-edit-callback="formChanged(v)")
+			h1.fill(inline-edit="frm.myEditableLabel",inline-edit-btn-edit="",inline-edit-placeholder="This is editiable label. Edit me!",inline-edit-on-blur="save",inline-edit-on-click,inline-edit-callback="formChanged(v)",autofocus)
 			br
 			h2.fill(inline-edit="frm.myEditableText",inline-edit-btn-edit="",inline-edit-btn-save="save",inline-edit-placeholder="This is editiable textarea",inline-edit-on-blur="save",inline-edit-on-click,inline-edit-callback="formChanged(v)",inline-edit-textarea)
 
