@@ -23,7 +23,7 @@
 					a(ng-click="userManager.signInGoogle()") login
 
 		block content
-		img.sitebg(ng-if="!layout.no_bg",src='resources/imgs/bg_matrix_optimized.gif')
+		img.sitebg(ng-src='{{ !layout.no_bg ? "resources/imgs/bg_matrix_optimized.gif" : "" }}')
 		//- video.fullscreen(loop, muted, autoplay)
 			source(src='resources/imgs/bg_matrix_optimized.mov')
 
