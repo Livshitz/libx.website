@@ -5,6 +5,8 @@ if (global.projconfig != null) global.libx._projconfig = global.projconfig;
 if (global._ == null) global._ = libx._;
 
 window.bundular = libx.di.register('bundular', require('bundularjs'));
+libx.di.register('redux', require('libx.js/modules/redux'));
+libx.di.register('rx', require('libx.js/modules/rxjs'));
 
 // Setup log:
 libx.di.inject(log=>{

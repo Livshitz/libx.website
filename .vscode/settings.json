@@ -3,5 +3,6 @@
     "files.exclude": {
 		"lib-cache": true,
 		"build": true
-	}
+	},
+	"debug.node.autoAttach": "on"
 }
