@@ -51,6 +51,8 @@ html(ng-controller='layoutEx')
 		script(src=depSource + 'framework/bundle.firebase.js')
 		//- script(src=depSource + 'scripts/libx.essentials.browser.js')
 
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.4.0/rxjs.umd.min.js')
+		
 		// build:jsBundle bundle/browserified.js
 		script(src='resources/scripts/libx.js')
 		//script(src='resources/scripts/api-modules.js')
@@ -62,9 +64,13 @@ html(ng-controller='layoutEx')
 		script(src='resources/scripts/app-config.js')
 		//- script(src='/components/my-loader/controller.js')
 		//- script(src='/components/components-templates.js')
+		//- script(src='https://cdn.jsdelivr.net/npm/rx-lite@4.0.8/rx.lite.min.js')
 		// endbuild
 
 		//- script(src=depSource + '/v' + libVer + '/js/build/base.site.js')
+
+		script.
+			libx.di.register('rx', rxjs);
 
 	// Live-reload:
 	script.

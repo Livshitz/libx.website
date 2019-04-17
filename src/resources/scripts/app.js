@@ -69,3 +69,28 @@ bundular.controller('layoutEx', ($scope, $rootScope, $sce, $compile, $templateCa
 (()=>{
 	bundular.bootstrap('myApp');
 })()
+
+/*
+function counter(state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+var initialState = 1;
+app.dataStore = libx.di.modules.redux.createStore(counter, initialState)
+
+var render = ()=> {
+	console.log('sub', app.dataStore.getState())
+
+	$scope.num = app.dataStore.getState();
+	$scope.safeApply();
+}
+
+app.dataStore.subscribe(render);
+*/

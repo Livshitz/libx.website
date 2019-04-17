@@ -5,14 +5,15 @@ if (global.projconfig != null) global.libx._projconfig = global.projconfig;
 if (global._ == null) global._ = libx._;
 
 window.bundular = libx.di.register('bundular', require('bundularjs'));
-libx.di.register('redux', require('libx.js/modules/redux'));
-libx.di.register('rx', require('libx.js/modules/rxjs'));
+// libx.di.register('redux', require('libx.js/modules/redux'));
 
 // Setup log:
-libx.di.inject(log=>{
+libx.di.require(log=>{
 	log.isDebug = true;
 	// log.isShowStacktrace = true;
 })
+
+libx.di.register('rx', global.rxjs); // Register globally injected rxjs script
 
 // Firebase and related modules instantiation:
 global._firebase = global.firebase.initializeApp(projconfig.firebaseConfig);
@@ -20,5 +21,13 @@ var firebase = require('libx.js/modules/firebase')(global._firebase, global.fire
 libx.di.register('firebase', firebase);
 var userManager = require('libx.js/browser/userManager')(firebase);
 libx.di.register('userManager', userManager);
+
+// libx.di.register('EventsStore', require('libx.js/modules/eventsStore'));
+global.appEvents = libx.di.require((appEvents)=>{
+	appEvents.subscribe(ev=>ev.type=='test', (x)=>console.log('state: ', x))
+	appEvents.subscribeOnce(ev=>ev.type=='test', (x)=>console.log('state2: ', x))
+	appEvents.subscribe(ev=>ev.type=='test', (x)=>console.log('stateHist: ', x), appEvents.history)
+});
+
 
 libx.log.verbose('browserify ready');
