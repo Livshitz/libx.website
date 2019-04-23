@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs", // 'commonjs', 'amd', 'umd', 'system'.
+		"moduleResolution": "node", //"classic", "nodejs"
+        // "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true
+		//"isolatedModules": false
+		// "outFile": "tsc.js"
+		// "outFile": "./build/resources/scripts/tsc.js"
+	}
+	
+	// "include": [
+    //     "browserify/**/*.ts"
+    // ],
+    // "files": [
+      
+    // ]
+}

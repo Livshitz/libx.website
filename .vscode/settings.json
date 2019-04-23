@@ -4,5 +4,5 @@
 		"lib-cache": true,
 		"build": true
 	},
-	"debug.node.autoAttach": "on"
+	"debug.node.autoAttach": "off"
 }

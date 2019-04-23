@@ -6,14 +6,13 @@ if (global._ == null) global._ = libx._;
 
 window.bundular = libx.di.register('bundular', require('bundularjs'));
 // libx.di.register('redux', require('libx.js/modules/redux'));
+libx.di.register('rx', global.rxjs); // Register globally injected rxjs script
 
 // Setup log:
 libx.di.require(log=>{
 	log.isDebug = true;
 	// log.isShowStacktrace = true;
 })
-
-libx.di.register('rx', global.rxjs); // Register globally injected rxjs script
 
 // Firebase and related modules instantiation:
 global._firebase = global.firebase.initializeApp(projconfig.firebaseConfig);
@@ -29,5 +28,6 @@ global.appEvents = libx.di.require((appEvents)=>{
 	appEvents.subscribe(ev=>ev.type=='test', (x)=>console.log('stateHist: ', x), appEvents.history)
 });
 
-
 libx.log.verbose('browserify ready');
+
+global.tt = require('./modules/test.ts')
