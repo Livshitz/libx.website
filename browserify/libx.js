@@ -6,7 +6,7 @@ if (global._ == null) global._ = libx._;
 
 window.bundular = libx.di.register('bundular', require('bundularjs'));
 // libx.di.register('redux', require('libx.js/modules/redux'));
-libx.di.register('rx', global.rxjs); // Register globally injected rxjs script
+libx.di.register('rxjs', global.rxjs); // Register globally injected rxjs script
 
 // Setup log:
 libx.di.require(log=>{

@@ -1,19 +1,21 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bundularjs": "^0.1.17",
-    "libx.js": "^0.1.12",
-    "connect-gzip": "^0.1.6",
-    "ng-inline-edit": "^0.7.0"
-  },
-  "devDependencies": {}
+	"name": "test",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bundularjs": "^0.2.1",
+		"connect-gzip": "^0.1.6",
+		"libx.js": "^0.2.0",
+		"ng-inline-edit": "^0.7.0"
+	},
+	"devDependencies": {
+		"pax.libx.js": "^0.1.0"
+	}
 }
