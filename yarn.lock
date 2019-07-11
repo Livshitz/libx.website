@@ -2304,10 +2304,10 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
-bundularjs@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/bundularjs/-/bundularjs-0.2.0.tgz#594947e078a341f2bcc7281eb461842e17c51496"
-  integrity sha512-GZtmQiMzLnHtU26CjomlTdwFMdjIAg5ZUW0Ce4Nza0c+Y9TciV/jKIAaYd87kUjQPe2S/2BwSSc3U7AQgTSdlw==
+bundularjs@^0.2.2:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/bundularjs/-/bundularjs-0.2.6.tgz#3734e9f6a15fd9dd8ad24aa103415c26e1f508aa"
+  integrity sha512-R/v3mgdMTCC3o9C/51YvojOrbl+nIuZ/74wYGZozcqUi4udq+F9FZgTioCnWZm5hn5OS8llT2Tbv/35w3kHFtA==
   dependencies:
     algoliasearch "^3.32.0"
     angular "^1.7.6"
@@ -2320,8 +2320,8 @@ bundularjs@^0.2.0:
     angular-sanitize "^1.7.6"
     firebase "^5.9.2"
     jquery "^3.3.1"
-    libx.js "^0.2.0"
-    pax.libx.js "^0.1.0"
+    libx.js "^0.2.5"
+    pax.libx.js "^0.1.2"
 
 bytebuffer@~5:
   version "5.0.1"
@@ -6183,6 +6183,24 @@ libx.js@^0.2.0:
     typings "^2.1.1"
     yargs "^12.0.5"
 
+libx.js@^0.2.2, libx.js@^0.2.5:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/libx.js/-/libx.js-0.2.6.tgz#8cc58706f144df48e4d38d5f7d7544ebe2b5c60e"
+  integrity sha512-J5wNbBOjNcBQSzBh8DTvknUawNPPvcN+2oWfJQB0Dw7xUUe/+j71ig22JcszLkqWvrPzOEwXz82D0eNzAJCC8g==
+  dependencies:
+    buffer "^5.2.1"
+    crypto-js "^3.1.9-1"
+    deferred-js "^1.0.2"
+    json-bump "^0.1.3"
+    lodash "^4.17.11"
+    redux "^4.0.1"
+    request "^2.88.0"
+    rxjs "^6.4.0"
+    rxjs-compat "^6.4.0"
+    typescript "^3.4.5"
+    typings "^2.1.1"
+    yargs "^12.0.5"
+
 liftoff@^2.1.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/liftoff/-/liftoff-2.5.0.tgz#2009291bb31cea861bbf10a7c15a28caf75c31ec"
@@ -6355,9 +6373,9 @@ lodash.memoize@~3.0.3:
   integrity sha1-LcvSwofLwKVcxCMovQxzYVDVPj8=
 
 lodash.merge@^4.4.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
-  integrity sha512-AOYza4+Hf5z1/0Hztxpm2/xiPZgi/cjMqdnKTUWTBSKchJlxXXuUSxCCl8rJlf4g6yww/j6mA8nC8Hw/EZWxKQ==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.partialright@^4.1.4:
   version "4.2.1"
@@ -7611,6 +7629,63 @@ pax.libx.js@^0.1.0:
     jest "^24.8.0"
     less-plugin-sass2less "^1.2.0"
     libx.js "^0.2.0"
+    through "^2.3.8"
+    through2 "^3.0.0"
+    ts-jest "^24.0.2"
+    tsify "^4.0.1"
+    typescript "^3.4.5"
+    vinyl-buffer "^1.0.1"
+    vinyl-source-stream "^2.0.0"
+    vinyl-transform "^1.0.0"
+
+pax.libx.js@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/pax.libx.js/-/pax.libx.js-0.1.2.tgz#dcf860e3b98a95559767c6b89682dbb4f1cbb002"
+  integrity sha512-LoZVWtZeWjeiHmK07giNw9xHJwmV+gbe7cwnsZNSz7FXS+kbgWNbZuvT/H1xMi0lbm0pgekaHEG5UBuiDmpF4A==
+  dependencies:
+    "@babel/cli" "^7.4.4"
+    "@babel/core" "^7.4.4"
+    "@babel/plugin-transform-runtime" "^7.4.4"
+    "@babel/preset-env" "^7.4.4"
+    "@babel/preset-react" "^7.0.0"
+    "@babel/preset-typescript" "^7.3.3"
+    "@types/jest" "^24.0.12"
+    babel-jest "^24.8.0"
+    babel-plugin-transform-es2015-arrow-functions "^6.22.0"
+    babel-preset-es3 "^1.0.1"
+    babelify "^10.0.0"
+    browserify "^16.2.3"
+    cheerio "^1.0.0-rc.2"
+    chokidar "^2.0.4"
+    compression "^1.7.3"
+    cors "^2.8.5"
+    del "^3.0.0"
+    gulp "^3.9.1"
+    gulp-angular-templatecache "^2.2.6"
+    gulp-babel "^8.0.0"
+    gulp-babel-minify "^0.5.0"
+    gulp-clean-css "^4.0.0"
+    gulp-concat "^2.6.1"
+    gulp-connect "^5.7.0"
+    gulp-debug "^4.0.0"
+    gulp-htmlmin "^5.0.1"
+    gulp-if "^2.0.2"
+    gulp-less "^4.0.1"
+    gulp-less2sass "^0.0.2"
+    gulp-pug "^4.0.1"
+    gulp-rename "^1.4.0"
+    gulp-sass "^4.0.2"
+    gulp-shell "^0.6.5"
+    gulp-sourcemaps "^2.6.4"
+    gulp-streamify "^1.0.2"
+    gulp-typescript "^5.0.1"
+    gulp-uglify "^3.0.1"
+    gulp-usemin "^0.3.29"
+    gulp-watch "^5.0.1"
+    into-stream "^4.0.0"
+    jest "^24.8.0"
+    less-plugin-sass2less "^1.2.0"
+    libx.js "^0.2.2"
     through "^2.3.8"
     through2 "^3.0.0"
     ts-jest "^24.0.2"
