@@ -45,7 +45,11 @@ bundular.run( ($rootScope, utils, $window, $location) => {
 	});
 
 	// Load components ahead of time (otherwise, require them from the specific controller)
-	var components = ['my-loader', 'my-widget'];
+	var components = [ 
+		'my-loader', 
+		'my-widget', 
+		'my-timer', 
+	];
 	_.each(components, compName=> {
 		libx.browser.require('components/' + compName + '/controller.js');
 	})

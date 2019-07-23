@@ -1,0 +1,15 @@
+.my-timer.bg-white.padding20(layout="column",layout-align="start center")
+	h3 Timer: {{ (timerCur || timerTotal()) | formatTimer }}
+	div(ng-show="state=='stopped'",layout="row")
+		md-input-container
+			label Minutes:
+			input(ng-model='timerStartMin', placeholder='00',style="width:80px")
+		md-input-container
+			label Seconds:
+			input(ng-model='timerStartSec', placeholder='00',style="width:80px")
+
+	div
+		md-button.md-raised.md-primary(ng-show="state=='stopped'",ng-click="start()") Start
+		md-button.md-raised.md-primary(ng-show="state=='paused'",ng-click="resume()") Resume
+		md-button.md-raised.md-accent(ng-show="state=='playing'",ng-click="pause()") Pause
+		md-button.md-raised.md-warn(ng-show="state=='playing' || state =='paused'",ng-click="stop()") Stop
